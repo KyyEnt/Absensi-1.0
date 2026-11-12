@@ -19,4 +19,9 @@ class AnggotaKelas extends Model
     {
         return $this->belongsTo(Siswa::class, 'id_siswa', 'id_siswa');
     }
+
+    public function absensi()
+    {
+        return $this->hasMany(Absensi::class, 'id_anggota_kelas', 'id_anggota_kelas');
+    }
 }

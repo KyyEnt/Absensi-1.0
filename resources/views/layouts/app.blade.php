@@ -27,29 +27,20 @@
                 <a href="{{ route('dashboard.index') }}" class="block px-4 py-2 font-medium rounded-lg {{ request()->routeIs('dashboard.index') ? 'bg-[#2563EB] text-white' : 'text-gray-600 hover:bg-gray-100' }}">
                     Dashboard
                 </a>
-                <a href="#" class="block px-4 py-2 font-medium rounded-lg text-gray-600 hover:bg-gray-100">
+                <a href="{{ route('absensi.index') }}" class="block px-4 py-2 font-medium rounded-lg {{ request()->routeIs('absensi.*') ? 'bg-[#2563EB] text-white' : 'text-gray-600 hover:bg-gray-100' }}">
                     Absensi
-                </a>
-                <a href="#" class="block px-4 py-2 font-medium rounded-lg text-gray-600 hover:bg-gray-100">
-                    Kelas
-                </a>
-                <a href="#" class="block px-4 py-2 font-medium rounded-lg text-gray-600 hover:bg-gray-100">
-                    Siswa
                 </a>
                 <a href="{{ route('kartu.index') }}" class="block px-4 py-2 font-medium rounded-lg {{ request()->routeIs('kartu.*') ? 'bg-[#2563EB] text-white' : 'text-gray-600 hover:bg-gray-100' }}">
                     Kartu RFID
-                </a>
-                <a href="#" class="block px-4 py-2 font-medium rounded-lg text-gray-600 hover:bg-gray-100">
-                    Izin
-                </a>
-                <a href="#" class="block px-4 py-2 font-medium rounded-lg text-gray-600 hover:bg-gray-100">
-                    Laporan
                 </a>
             </nav>
         </div>
         
         <div class="p-4 border-t border-gray-200">
-            <button class="w-full flex justify-center py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Logout</button>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="w-full flex justify-center py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Logout</button>
+            </form>
         </div>
     </aside>
 
